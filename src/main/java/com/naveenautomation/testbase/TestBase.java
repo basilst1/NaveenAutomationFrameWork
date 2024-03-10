@@ -1,5 +1,9 @@
 package com.naveenautomation.testbase;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +26,54 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestBase {
 
 	public static WebDriver driver;
+	private Properties prop;
+	private FileInputStream fileInputStream;
+
+	public WebDriverEvents events;
+	public EventFiringWebDriver eDriver;
+
+//	public TestBase() {
+//		prop = new Properties();
+//		try {
+//			fileInputStream = new FileInputStream(
+//					"C:\\Users\\judet\\eclipse-workspace\\DemoProject\\src\\main\\java\\com\\naveenautomation\\DemoProject\\config\\config.properties");
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//
+//		try {
+//			prop.load(fileInputStream);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 	public void initialization() {
+//
+//		String browserName = System.getProperty("BrowserName") != null ? System.getProperty("BrowserName")
+//				: prop.getProperty("browser");
+//		// String browserName = System.getProperty("BrowserName");
+//		switch (browserName) {
+//		case "Chrome":
+//			driver = WebDriverManager.chromedriver().create();
+//			break;
+//		case "Edge":
+//			driver = WebDriverManager.edgedriver().create();
+//			break;
+//		case "Firefox":
+//			driver = WebDriverManager.firefoxdriver().create();
+//			break;
+//		default:
+//			System.out.println("Invalid Browser");
+//			break;
+//		}
+//
+//		driver.get(prop.getProperty("URL"));
+//		driver.manage().timeouts().implicitlyWait(Long.parseLong(prop.getProperty("Implicit_wait")), TimeUnit.SECONDS);
+//		driver.manage().window().maximize();
+
 		WebDriverManager.edgedriver().setup();
 		driver = new EdgeDriver();
 

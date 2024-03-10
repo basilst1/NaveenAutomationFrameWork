@@ -8,6 +8,8 @@ import com.naveenautomation.testbase.TestBase;
 
 public class YourAffiliateInformationPage extends TestBase {
 
+	MyAccountPage myAccountPage;
+
 	public YourAffiliateInformationPage() {
 
 		PageFactory.initElements(driver, this);
@@ -31,17 +33,17 @@ public class YourAffiliateInformationPage extends TestBase {
 	@FindBy(xpath = "//*[@type='submit']")
 	WebElement submitBtn;
 
-	public void companyName() {
-		company.sendKeys("bst essential");
+	public void companyName(String companyname) {
+		company.sendKeys("company name");
 	}
 
-	public void websiteId() {
-		website.sendKeys("www.bst.com");
+	public void websiteId(String website) {
+		this.website.sendKeys("website");
 
 	}
 
-	public void chequePayeeInfo() {
-		chequePayee.sendKeys("Basilst thomas");
+	public void chequePayeeInfo(String name) {
+		chequePayee.sendKeys("name");
 	}
 
 	public String getAffiliateAccountText() {
@@ -49,12 +51,21 @@ public class YourAffiliateInformationPage extends TestBase {
 
 	}
 
+	public void agreeBtn() {
+		agreeBtn.click();
+	}
+
 	public void submitBtn() {
 		submitBtn.click();
 	}
 
-	public void agreeBtn() {
-		agreeBtn.click();
+	public void SubmitInformation(String companyname, String website, String name) {
+
+		companyName(companyname);
+		websiteId(website);
+		chequePayeeInfo(name);
+		submitBtn.click();
+
 	}
 
 }

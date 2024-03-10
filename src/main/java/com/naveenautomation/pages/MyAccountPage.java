@@ -28,15 +28,13 @@ public class MyAccountPage extends TestBase {
 
 	@FindBy(css = "div.text-danger")
 	WebElement dangerBanner;
-	
-	
-	
-	@FindBy(xpath= "//*[@id='content']/ul[3]/li/a")
+
+	@FindBy(xpath = "//*[@id='content']/ul[3]/li/a")
 	WebElement goToMyAffiliateAccount;
+
 	public void goToAffiliateAccount() {
 		goToMyAffiliateAccount.click();
 	}
-	
 
 	public ChangePwdPage clickChangePasswordBtn() {
 		changePwdBtn.click();
